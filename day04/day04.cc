@@ -5,7 +5,7 @@ using namespace std;
 pair<string, string> split(const string &str, char delimiter) {
     int delim_pos = str.find(delimiter);
     string substr_1 = str.substr(0, delim_pos);
-    string substr_2 = str.substr(delim_pos + 1, str.size());
+    string substr_2 = str.substr(delim_pos + 1);
 
     return make_pair(substr_1, substr_2);
 }

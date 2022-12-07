@@ -8,8 +8,8 @@ using namespace std;
 vector<deque<char>> read_stacks() {
     vector<deque<char>> stacks;
     string buf;
-    getline(cin, buf);
-    while (buf[1] != '1') {
+    do {
+        getline(cin, buf);
         for (int i = 0; i < buf.size(); i += 4) {
             if (buf[i] == '[') {
                 if (i / 4 + 1 > stacks.size()) {
@@ -18,8 +18,7 @@ vector<deque<char>> read_stacks() {
                 stacks[i / 4].push_back(buf[i + 1]);
             }
         }
-        getline(cin, buf);
-    }
+    } while (buf[1] != '1');
     return stacks;
 }
 

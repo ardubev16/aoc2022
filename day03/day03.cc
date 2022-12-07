@@ -10,7 +10,7 @@ int part1() {
     while (cin >> str) {
         map<char, bool> visited;
         string first_substr = str.substr(0, str.size() / 2);
-        string second_substr = str.substr(str.size() / 2, str.size());
+        string second_substr = str.substr(str.size() / 2);
 
         for (char c : first_substr) {
             if (second_substr.find(c) != string::npos && !visited.count(c)) {
