@@ -4,8 +4,8 @@
 using namespace std;
 
 bool all_unique(const string &str) {
-    for (int i = 0; i < str.size(); i++) {
-        for (int j = i + 1; j < str.size(); j++) {
+    for (size_t i = 0; i < str.size(); i++) {
+        for (size_t j = i + 1; j < str.size(); j++) {
             if (str[i] == str[j])
                 return false;
         }
@@ -17,7 +17,7 @@ int part1(int distinct_chars = 4) {
     string str;
     cin >> str;
 
-    for (int i = distinct_chars - 1; i < str.size(); i++) {
+    for (size_t i = distinct_chars - 1; i < str.size(); i++) {
         if (all_unique(str.substr(i - (distinct_chars - 1), distinct_chars)))
             return i + 1;
     }

@@ -10,7 +10,7 @@ vector<deque<char>> read_stacks() {
     string buf;
     do {
         getline(cin, buf);
-        for (int i = 0; i < buf.size(); i += 4) {
+        for (size_t i = 0; i < buf.size(); i += 4) {
             if (buf[i] == '[') {
                 if (i / 4 + 1 > stacks.size()) {
                     stacks.resize(i / 4 + 1);
@@ -35,7 +35,7 @@ string part1() {
         }
     }
     string result;
-    for (int i = 0; i < stacks.size(); i++)
+    for (size_t i = 0; i < stacks.size(); i++)
         result += stacks[i].front();
 
     return result;
@@ -59,7 +59,7 @@ string part2() {
         }
     }
     string result;
-    for (int i = 0; i < stacks.size(); i++)
+    for (size_t i = 0; i < stacks.size(); i++)
         result += stacks[i].front();
 
     return result;

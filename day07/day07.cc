@@ -117,7 +117,7 @@ int part1() {
     while (!Q.empty()) {
         Node curr_dir = Q.front();
         Q.pop();
-        for (const pair<string, Node> &subdir : curr_dir.getChildren()) {
+        for (const pair<const string, Node> &subdir : curr_dir.getChildren()) {
             if (subdir.second.getType() == Ftype::D) {
                 Q.push(subdir.second);
                 if (subdir.second.getSize() <= UPPER_BOND)
@@ -143,7 +143,7 @@ int part2() {
     while (!Q.empty()) {
         Node curr_dir = Q.front();
         Q.pop();
-        for (const pair<string, Node> &subdir : curr_dir.getChildren()) {
+        for (const pair<const string, Node> &subdir : curr_dir.getChildren()) {
             if (subdir.second.getType() == Ftype::D) {
                 Q.push(subdir.second);
                 if (subdir.second.getSize() >= needed)
